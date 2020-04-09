@@ -22,20 +22,21 @@ RNA was poly-A selected and multiplexed RNA-sequencing libraries were prepared u
  
  **Steps of pipeline: 1, 2, and 3**
 
-We first assessed the quality of paired-end reads with [FASTQC] (https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) (version 0.11.8). Next, we filtered reads with BBDUK from [BBTOOLS] (https://jgi.doe.gov/data-and-tools/bbtools/) (version 37.53) to remove adapters, known artefacts, and then quality trimmed (PHRED quality score < 10). Reads that became too short after trimming (N < 60 bp) were discarded. We did not retain singleton reads (i.e., reads whose mate has been discarded). 
+We first assessed the quality of paired-end reads with [FASTQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) (version 0.11.8). Next, we filtered reads with BBDUK from [BBTOOLS](https://jgi.doe.gov/data-and-tools/bbtools/) (version 37.53) to remove adapters, known artefacts, and then quality trimmed (PHRED quality score < 10). Reads that became too short after trimming (N < 60 bp) were discarded. We did not retain singleton reads (i.e., reads whose mate has been discarded). 
 
 ### Quantification
  **Folder : HPC**
  
  **Steps of pipeline: 4**
-We estimated the transcript-level quantification of cleaned RNA-seq data using SALMON (version 1.0.0) (Patro et al., 2017) by a quasi-mapping on Mus musculus GRCm38. We estimated the gene-level quantification using tximport library (Soneson et al., 2015).
+ 
+We estimated the transcript-level quantification of cleaned RNA-seq data using [SALMON](https://combine-lab.github.io/salmon/) (version 1.0.0) (Patro et al., 2017) by a quasi-mapping on Mus musculus GRCm38. We estimated the gene-level quantification using tximport library (Soneson et al., 2015).
 
 ### Convertion Mouse genes to Human genes
  **Folder : R**
  
  **File : mouse2human.R**
  
-We converted mouse gene expression to human gene expression using biomaRt library (Durinck et al., 2005; Durinck et al., 2009)
+We converted mouse gene expression to human gene expression using [biomaRt](https://bioconductor.org/packages/release/bioc/html/biomaRt.html) library (Durinck et al., 2005; Durinck et al., 2009)
 
 
 #### 04/09/2020
